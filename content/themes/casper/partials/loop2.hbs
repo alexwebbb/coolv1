@@ -1,0 +1,17 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#get "posts" filter="featured:true" as |featured|}}
+  {{#foreach featured}}
+<article class="{{post_class}} homepage">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+    </header>
+    <section class="post-excerpt">
+<a class="read-more" href="{{url}}">
+<img src={{image}} />
+{{!content}}
+        <p>{{excerpt words="26"}}</a></p>
+    </section>
+</article>
+{{/foreach}}
+{{/get}}
+
